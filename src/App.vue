@@ -1,28 +1,46 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div class="container">
+      <div class="main-container">
+        <router-view></router-view>
+      </div>
+      <div class="side-container">
+        <Side/>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Side from './components/Side.vue'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    Side
   }
 }
 </script>
 
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: Verdana, sans-serif;
+  font-size:16px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  width:900px;
+  max-width:100%;
+  margin:20px auto;
+}
+.container {
+  border:1px solid black;
+  display:flex;
+  flex-direction:row;
+}
+.main-container {
+  background-color:#eee;
+  flex:auto;
+  order:1;
+  padding:0.5rem 1rem;
 }
 </style>
