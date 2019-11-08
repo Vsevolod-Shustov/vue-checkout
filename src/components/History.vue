@@ -1,14 +1,21 @@
 <template>
   <div>
-    History
+    <ul>
+      <li v-for="item in historyItems" v-bind:key="item.id">
+        {{ item.number }}
+      </li>
+    </ul>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'History',
-  props: {
-    
+  computed: {
+    historyItems: {
+      get () {
+        return this.$store.state.history
+      }
+    }
   }
 }
 </script>

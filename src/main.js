@@ -24,6 +24,7 @@ Vue.use(Vuex)
 const store = new Vuex.Store({
   strict: true,
    state: {
+    id: 0,
     form: {
       cardNumber: '000000000000',
     },
@@ -34,7 +35,8 @@ const store = new Vuex.Store({
       state.form.cardNumber = cardNumber
     },
     submitTransaction (state) {
-      state.history.push({'number': state.form.cardNumber})
+      state.history.push({'id': state.id, 'number': state.form.cardNumber})
+      state.id++
     }
   }
   /* strict: true,

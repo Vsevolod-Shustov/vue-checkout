@@ -21,6 +21,7 @@ export default {
   flex-direction:column;
   width:200px;
   padding:0.25rem;
+  height:100%;
 }
 .side a {
   padding:0.25rem 0.5rem;

@@ -23,6 +23,9 @@ export default {
 </script>
 
 <style>
+* {
+  box-sizing:border-box;
+}
 #app {
   font-family: Verdana, sans-serif;
   font-size:16px;
