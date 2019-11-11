@@ -3,6 +3,8 @@
     <ul>
       <li v-for="item in historyItems" v-bind:key="item.id">
         {{ item.number }}
+        {{ item.firstName }}
+        {{ item.lastName }}
       </li>
     </ul>
   </div>

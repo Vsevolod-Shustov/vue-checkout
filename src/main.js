@@ -27,6 +27,8 @@ const store = new Vuex.Store({
     id: 0,
     form: {
       cardNumber: '000000000000',
+      firstName: "",
+      lastName: ""
     },
     history: [],
   },
@@ -34,8 +36,19 @@ const store = new Vuex.Store({
     updateCardNumber (state, cardNumber) {
       state.form.cardNumber = cardNumber
     },
+    updateFirstName (state, firstName) {
+      state.form.firstName = firstName
+    },
+    updateLastName (state, lastName) {
+      state.form.lastName = lastName
+    },
     submitTransaction (state) {
-      state.history.push({'id': state.id, 'number': state.form.cardNumber})
+      state.history.push({
+        'id': state.id,
+        'number': state.form.cardNumber,
+        'firstName': state.form.firstName,
+        'lastName': state.form.lastName,
+      })
       state.id++
     }
   }

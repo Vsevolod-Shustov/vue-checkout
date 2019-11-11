@@ -25,6 +25,11 @@ export default {
 <style>
 * {
   box-sizing:border-box;
+  margin-block-start:0;
+  margin-block-end:0;
+}
+html {
+  
 }
 #app {
   font-family: Verdana, sans-serif;

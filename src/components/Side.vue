@@ -40,4 +40,7 @@ export default {
 .side a:nth-of-type(2n+1) {
   background-color:#aaa;
 }
+.router-link-exact-active {
+  font-weight:bold;
+}
 </style>
