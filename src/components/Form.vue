@@ -1,17 +1,17 @@
 <template>
   <div class="form">
     <h3>Form</h3>
+    <div v-if="errors.length" class="errors">
+      <li v-for="error in this.errors" v-bind:key="error">
+        {{ error }}
+      </li>
+    </div>
     <div class="card-number-container">
-      <input v-model='cardNumber' />
-      <p class="card-number-display">{{cardNumber}}</p>
+      <input v-model.number='cardNumber' type="number" />
     </div>
     <div class="name-container">
-      <label> First Name <br>
-        <input v-model='firstName' />
-      </label>
-      <label> Last Name <br>
-        <input v-model='lastName' />
-      </label>
+      <input v-model='firstName' placeholder='First Name'/>
+      <input v-model='lastName' placeholder='Last Name'/>
     </div>
     <button class="button-submit" @click="submit">Submit</button>
   </div>
@@ -22,6 +22,11 @@ export default {
   /* props: {
     message: String,
   } */
+  data: function(){
+    return {
+      errors: [],
+    }
+  },
   computed: {
     cardNumber: {
       get () {
@@ -59,7 +64,15 @@ export default {
       this.$store.commit('updateLastName', e.target.value)
     },
     submit () {
-      this.$store.commit('submitTransaction')
+      this.errors = []
+      alert(typeof(this.cardNumber))
+      if(typeof(this.cardNumber) !== "number" || this.cardNumber.toString().length !== 12) {
+        this.errors.push('Card number must be a 12-digit number')
+      }
+      if(!this.errors.length) {
+        alert('committing');
+        this.$store.commit('submitTransaction')
+      }
     }
   }
 }
@@ -102,7 +115,7 @@ export default {
       justify-content:space-between;
     }
     .name-container input {
-      width:98%;
+      max-width:49%;
     }
   }
 </style>

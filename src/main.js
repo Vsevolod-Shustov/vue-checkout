@@ -26,7 +26,7 @@ const store = new Vuex.Store({
    state: {
     id: 0,
     form: {
-      cardNumber: '000000000000',
+      cardNumber: 0,
       firstName: "",
       lastName: ""
     },
