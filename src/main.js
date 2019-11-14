@@ -15,8 +15,7 @@ const routes = [
 ]
 
 const router = new VueRouter({
-  routes,
-  mode: 'history'
+  routes
 })
 
 Vue.use(Vuex)

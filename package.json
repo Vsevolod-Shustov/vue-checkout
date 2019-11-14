@@ -2,7 +2,7 @@
   "name": "vue-checkout",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://vsevolod-shustov.github.io/vue-checkout",
+  "homepage": "https://vsevolod-shustov.github.io/vue-checkout",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
