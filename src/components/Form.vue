@@ -69,7 +69,6 @@ export default {
         this.errors.push('Card number must be a 12-digit number')
       }
       if(!this.errors.length) {
-        alert('committing');
         this.$store.commit('submitTransaction')
       }
     }
