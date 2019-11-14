@@ -1,6 +1,6 @@
 <template>
   <div class="side">
-    <router-link to="/">Form</router-link>
+    <router-link to="/form">Form</router-link>
     <router-link to="/history">History</router-link>
   </div>
 </template>

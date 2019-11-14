@@ -65,7 +65,6 @@ export default {
     },
     submit () {
       this.errors = []
-      alert(typeof(this.cardNumber))
       if(typeof(this.cardNumber) !== "number" || this.cardNumber.toString().length !== 12) {
         this.errors.push('Card number must be a 12-digit number')
       }

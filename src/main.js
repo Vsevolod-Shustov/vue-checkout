@@ -10,7 +10,7 @@ Vue.config.productionTip = false
 Vue.use(VueRouter)
 
 const routes = [
-  { path: '/', component: Form },
+  { path: '/form', component: Form },
   { path: '/history', component: History }
 ]
 
