@@ -1,19 +1,21 @@
 <template>
-  <div class="form">
-    <h3>Form</h3>
-    <div v-if="errors.length" class="errors">
-      <li v-for="error in this.errors" v-bind:key="error">
-        {{ error }}
-      </li>
+  <div class="form row">
+      <div class="col-sm-6">
+      <h3>Form</h3>
+      <div v-if="errors.length" class="errors">
+        <li v-for="error in this.errors" v-bind:key="error">
+          {{ error }}
+        </li>
+      </div>
+      <div class="card-number-container">
+        <input v-model.number='cardNumber' type="number" />
+      </div>
+      <div class="name-container">
+        <input v-model='firstName' placeholder='First Name'/>
+        <input v-model='lastName' placeholder='Last Name'/>
+      </div>
+      <button class="button-submit btn btn-primary" @click="submit">Submit</button>
     </div>
-    <div class="card-number-container">
-      <input v-model.number='cardNumber' type="number" />
-    </div>
-    <div class="name-container">
-      <input v-model='firstName' placeholder='First Name'/>
-      <input v-model='lastName' placeholder='Last Name'/>
-    </div>
-    <button class="button-submit" @click="submit">Submit</button>
   </div>
 </template>
 
@@ -78,42 +80,5 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-  .form {
-    display:flex;
-    flex-direction:column;
-  }
-  .form>* {
-    margin:0;
-    margin-bottom:0.5rem;
-  }
   
-  .button-submit {
-    padding:0.25rem;
-    color:white;
-    background-color:#2196F3;
-    border:none;
-    cursor:pointer;
-  }
-  
-  @media screen and (min-width:800px) {
-    .form {
-      max-width:50%;
-    }
-    .card-number-container {
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-    }
-    .card-number-container input {
-      width:49%;
-    }
-    
-    .name-container {
-      display:flex;
-      justify-content:space-between;
-    }
-    .name-container input {
-      max-width:49%;
-    }
-  }
 </style>

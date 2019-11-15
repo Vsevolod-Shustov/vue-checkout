@@ -1,11 +1,13 @@
 <template>
   <div id="app">
     <div class="container">
-      <div class="main-container">
-        <router-view></router-view>
-      </div>
-      <div class="side-container">
-        <Side/>
+      <div class="row">
+        <div class="main-container col-md-9 order-2">
+          <router-view></router-view>
+        </div>
+        <div class="side-container col-md-3 order-1">
+          <Side/>
+        </div>
       </div>
     </div>
   </div>
@@ -36,19 +38,15 @@ html {
   font-size:16px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  width:900px;
-  max-width:100%;
-  margin:20px auto;
 }
 .container {
-  border:1px solid black;
-  display:flex;
-  flex-direction:row;
+  margin-top:20px;
+  margin-bottom:20px;
 }
 .main-container {
+  background-color:#ddd;
+}
+.side-container {
   background-color:#eee;
-  flex:auto;
-  order:1;
-  padding:0.5rem 1rem;
 }
 </style>
