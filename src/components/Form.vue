@@ -1,22 +1,27 @@
 <template>
-  <div class="form row">
-      <div class="col-sm-6">
-      <h3>Form</h3>
-      <div v-if="errors.length" class="errors">
-        <li v-for="error in this.errors" v-bind:key="error">
-          {{ error }}
-        </li>
-      </div>
-      <div class="card-number-container">
-        <input v-model.number='cardNumber' type="number" />
-      </div>
-      <div class="name-container">
-        <input v-model='firstName' placeholder='First Name'/>
-        <input v-model='lastName' placeholder='Last Name'/>
-      </div>
-      <button class="button-submit btn btn-primary" @click="submit">Submit</button>
+  <form class="cardNumberForm col-sm-6">
+    <div v-if="errors.length" class="errors">
+      <li v-for="error in this.errors" v-bind:key="error">
+        {{ error }}
+      </li>
     </div>
-  </div>
+    <div class="form-group">
+      <label for="cardNumber">Card Number</label>
+      <input v-model.number='cardNumber' type="number" class="form-control" id="cardNumber"/>  
+    </div>
+    
+    <div class="form-group">
+      <label for="firstName">First Name</label>
+      <input v-model='firstName' placeholder='First Name' id="firstName" class="form-control"/>
+    </div>
+      
+    <div class="form-group">  
+      <label for="lastName">Last Name</label>
+      <input v-model='lastName' placeholder='Last Name' id="lastName" class="form-control"/>
+    </div>
+    
+    <button type="submit" class="button-submit btn btn-primary" @click.prevent="submit">Submit</button>
+  </form>
 </template>
 
 <script>
@@ -80,5 +85,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-  
+  .errors {
+    margin-bottom:16px;
+  }
 </style>

@@ -1,7 +1,13 @@
 <template>
   <div class="side">
-    <router-link to="/form">Form</router-link>
-    <router-link to="/history">History</router-link>
+    <ul class="nav flex-column">
+      <li class="nav-item">
+        <router-link class="nav-link" to="/form">Form</router-link>
+      </li>
+      <li class="nav-item">
+        <router-link class="nav-link" to="/history">History</router-link>
+      </li>
+    </ul>
   </div>
 </template>
 
