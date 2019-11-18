@@ -50,5 +50,7 @@ html {
 }
 .side-container {
   background-color:#eee;
+  padding-top:15px;
+  padding-bottom:15px;
 }
 </style>
