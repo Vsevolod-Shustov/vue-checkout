@@ -24,10 +24,10 @@ export default {
 
 <style scoped>
   .nav-link {
-    background-color:#ccc;
+    
   }
   .nav-link.router-link-exact-active {
     font-weight:bold;
-    background-color:#bbb;
+    
   }
 </style>
